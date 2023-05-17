@@ -1,6 +1,4 @@
 {
-  "name": "fem-space-tourism-multi-page-website",
-  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
