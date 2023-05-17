@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgOptimizedImage, provideImageKitLoader } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -10,9 +10,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    NgOptimizedImage
   ],
-  providers: [],
+  providers: [
+    provideImageKitLoader('https://ik.imagekit.io/jgerard/fem-space-tourism-multi-page-website')
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
