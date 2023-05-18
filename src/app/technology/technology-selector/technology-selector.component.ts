@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
-
-enum Technology {
-  LAUNCH_VEHICLE = 1,
-  SPACEPORT,
-  SPACE_CAPSULE
-}
+import { Technology } from '../technology';
+import { TechnologyService } from '../technology.service';
 
 @Component({
   selector: 'app-technology-selector',
@@ -12,9 +8,13 @@ enum Technology {
   styleUrls: ['./technology-selector.component.scss']
 })
 export class TechnologySelectorComponent {
-  technology: Technology = Technology.LAUNCH_VEHICLE;
+  constructor(private technologyService: TechnologyService) { }
 
-  protected setTechnology(n: Technology) {
-    this.technology = n;
+  protected get technology(): Technology {
+    return this.technologyService.technology;
+  }
+
+  protected set technology(value: Technology) {
+    this.technologyService.technology = value;
   }
 }
