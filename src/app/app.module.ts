@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgOptimizedImage, provideImageKitLoader } from '@angular/common';
 
 import { AppComponent } from './app.component';
+import { TechnologySelectorComponent } from './technology/technology-selector/technology-selector.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TechnologySelectorComponent
   ],
   imports: [
     BrowserModule,
