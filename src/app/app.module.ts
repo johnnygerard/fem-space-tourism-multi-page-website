@@ -4,11 +4,13 @@ import { NgOptimizedImage, provideImageKitLoader } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { TechnologySelectorComponent } from './technology/technology-selector/technology-selector.component';
+import { TerminologyComponent } from './technology/terminology/terminology.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TechnologySelectorComponent
+    TechnologySelectorComponent,
+    TerminologyComponent
   ],
   imports: [
     BrowserModule,
