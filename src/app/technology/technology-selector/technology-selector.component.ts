@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Technology } from '../technology';
+import { TechnologyService } from '../technology.service';
 
 @Component({
   selector: 'app-technology-selector',
@@ -7,9 +8,13 @@ import { Technology } from '../technology';
   styleUrls: ['./technology-selector.component.scss']
 })
 export class TechnologySelectorComponent {
-  technology: Technology = Technology.LAUNCH_VEHICLE;
+  constructor(private technologyService: TechnologyService) { }
 
-  protected setTechnology(n: Technology) {
-    this.technology = n;
+  protected get technology(): Technology {
+    return this.technologyService.technology;
+  }
+
+  protected set technology(value: Technology) {
+    this.technologyService.technology = value;
   }
 }
