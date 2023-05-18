@@ -1,0 +1,60 @@
+@use 'index' as *;
+
+ol {
+  padding: 0;
+  display: flex;
+  gap: 16rem;
+
+  @include desktop {
+    gap: 32rem;
+    flex-direction: column;
+  }
+
+  >li {
+    // center
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // circle
+    border-radius: 50%;
+    border: 1px solid map-get($palette, 'transparent-white');
+
+    // typography
+    font-family: Bellefair;
+    color: map-get($palette, 'white');
+
+    @mixin diameter($value) {
+      height: #{$value}rem;
+      width: #{$value}rem;
+    }
+
+    @include mobile {
+      @include diameter(40);
+      font-size: 16rem;
+    }
+
+    @include tablet {
+      @include diameter(60);
+      font-size: 24rem;
+    }
+
+    @include desktop {
+      @include diameter(80);
+      font-size: 32rem;
+    }
+
+    // interactivity
+    cursor: pointer;
+
+    &[aria-checked="true"] {
+      background: map-get($palette, 'white');
+      color: map-get($palette, 'black');
+      border: none;
+    }
+
+    &:hover {
+      border-color: map-get($palette, 'white');
+    }
+  }
+}
