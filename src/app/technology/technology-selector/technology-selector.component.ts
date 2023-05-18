@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-
-enum Technology {
-  LAUNCH_VEHICLE = 1,
-  SPACEPORT,
-  SPACE_CAPSULE
-}
+import { Technology } from '../technology';
 
 @Component({
   selector: 'app-technology-selector',
