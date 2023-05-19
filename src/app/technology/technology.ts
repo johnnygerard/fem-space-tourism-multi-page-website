@@ -1,5 +1,5 @@
 export enum Technology {
-  LAUNCH_VEHICLE = 1,
+  LAUNCH_VEHICLE,
   SPACEPORT,
   SPACE_CAPSULE
 }

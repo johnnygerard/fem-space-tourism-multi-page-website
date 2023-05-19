@@ -8,15 +8,13 @@ import { Technology } from '../technology';
   styleUrls: ['./terminology.component.scss']
 })
 export class TerminologyComponent {
-  protected get technologyName(): string {
-    return Technology[this.techService.technology].replaceAll('_', ' ');
-  }
+  protected readonly techNames: readonly string[] = [
+    'launch vehicle',
+    'spaceport',
+    'space capsule',
+  ];
 
-  protected get technology(): Technology {
-    return this.techService.technology;
-  }
-
-  protected descriptions = [
+  protected readonly descriptions: readonly string[] = [
     `A launch vehicle or carrier rocket is a rocket-propelled vehicle used to
 carry a payload from Earth's surface to space, usually to Earth orbit or
 beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing
@@ -32,4 +30,8 @@ cinema, and plenty of other activities to keep you entertained.`
   ];
 
   constructor(private techService: TechnologyService) { }
+
+  protected get technology(): Technology {
+    return this.techService.technology;
+  }
 }
