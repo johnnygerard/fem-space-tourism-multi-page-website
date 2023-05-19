@@ -1,0 +1,74 @@
+@use 'index' as *;
+
+:host {
+  text-align: center;
+
+  @include desktop {
+    text-align: left;
+  }
+}
+
+.overline {
+  font-family: Barlow Condensed;
+  color: map-get($palette, 'accent');
+  font-size: 16rem;
+  line-height: 19rem;
+  letter-spacing: 2.7rem;
+  text-transform: uppercase;
+
+  @include mobile {
+    font-size: 14rem;
+    line-height: 17rem;
+    letter-spacing: 2.36rem;
+  }
+}
+
+.technology {
+  // Typography
+  font-family: Bellefair;
+  color: map-get($palette, 'white');
+
+  @include mobile {
+    margin-top: 8rem;
+    font-size: 24rem;
+    line-height: 28rem;
+  }
+
+  @include tablet {
+    margin-top: 16rem;
+    font-size: 40rem;
+    line-height: 46rem;
+  }
+
+  @include desktop {
+    margin-top: 12rem;
+    font-size: 56rem;
+    line-height: 64rem;
+  }
+}
+
+.description {
+  margin-top: 16rem;
+
+  // Typography
+  font-family: Barlow;
+  color: map-get($palette, 'accent');
+
+  @include mobile {
+    font-size: 15rem;
+    line-height: 25rem;
+    max-width: 327px;
+  }
+
+  @include tablet {
+    font-size: 16rem;
+    line-height: 28rem;
+    max-width: 458px;
+  }
+
+  @include desktop {
+    font-size: 18rem;
+    line-height: 32rem;
+    max-width: 444px;
+  }
+}

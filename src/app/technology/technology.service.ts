@@ -28,7 +28,7 @@ export class TechnologyService implements OnDestroy {
     }
 
     clearInterval(this._id);
-    this._id = setInterval(handler, 1000);
+    this._id = setInterval(handler, 12000);
   }
 
   ngOnDestroy(): void {
