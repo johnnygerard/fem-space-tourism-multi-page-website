@@ -2,8 +2,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "npm",
-      "script": "start",
+      "label": "serve",
+      "type": "shell",
+      "command": "ng serve",
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
@@ -11,7 +12,7 @@
         "background": {
           "activeOnStart": true,
           "beginsPattern": {
-            "regexp": "(.*?)"
+            "regexp": "Generating browser application bundles"
           },
           "endsPattern": {
             "regexp": "Compiled successfully"
@@ -20,19 +21,47 @@
       }
     },
     {
-      "type": "npm",
-      "script": "test",
+      "label": "test (all specs)",
+      "type": "shell",
+      "command": "ng test",
       "isBackground": true,
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
       "problemMatcher": {
         "owner": "typescript",
         "pattern": "$tsc",
         "background": {
           "activeOnStart": true,
           "beginsPattern": {
-            "regexp": "(.*?)"
+            "regexp": "Generating browser application bundles"
           },
           "endsPattern": {
-            "regexp": "bundle generation complete"
+            "regexp": "Browser application bundle generation complete"
+          }
+        }
+      }
+    },
+    {
+      "label": "test (current spec)",
+      "type": "shell",
+      "command": "ng test --include ${relativeFile}",
+      "isBackground": true,
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "Generating browser application bundles"
+          },
+          "endsPattern": {
+            "regexp": "Browser application bundle generation complete"
           }
         }
       }
