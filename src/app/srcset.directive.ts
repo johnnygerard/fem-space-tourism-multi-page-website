@@ -1,4 +1,7 @@
-import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+import {
+  Directive, ElementRef, Input, OnChanges,
+  Renderer2, SimpleChanges
+} from '@angular/core';
 
 /*
 The primary goal of this directive is to reduce repetitive markup which is
@@ -20,7 +23,7 @@ as the img src attribute selecting the smallest resolution as fallback.
 @Directive({
   selector: 'img[appSrcset], source[appSrcset]'
 })
-export class SrcsetDirective {
+export class SrcsetDirective implements OnChanges {
   private readonly IK_URL_ENDPOINT = 'https://ik.imagekit.io/jgerard';
   private readonly REPO = 'fem-space-tourism-multi-page-website';
   private readonly IK_BASE_URL: string;
@@ -31,13 +34,9 @@ export class SrcsetDirective {
     this.IK_BASE_URL = this.joinPaths(this.IK_URL_ENDPOINT, this.REPO);
   }
 
-  @Input() appTr?: string; // Transformation parameters
-  @Input() appSrcset!: number[] | ''; // Array of descriptors
-
-  // Image relative path
-  @Input() set appUrl(value: string) {
+  ngOnChanges(_changes: SimpleChanges): void {
     const host = this.elementRef.nativeElement;
-    const IK_URL = this.joinPaths(this.IK_BASE_URL, value);
+    const IK_URL = this.joinPaths(this.IK_BASE_URL, this.appUrl);
     const width = host.getAttribute('width');
     const height = host.getAttribute('height');
     const descriptorUnitIsW = host.getAttribute('sizes') !== null;
@@ -65,6 +64,10 @@ export class SrcsetDirective {
     if (host instanceof HTMLImageElement)
       this.renderer.setAttribute(host, 'src', srcset[0].split(' ')[0]);
   }
+
+  @Input() appTr?: string; // Transformation parameters
+  @Input() appSrcset!: number[] | ''; // Array of descriptors
+  @Input() appUrl!: string; // Image relative path
 
   private joinPaths(left: string, right: string): string {
     return `${left.replace(/\/$/, '')}/${right.replace(/^\//, '')}`;
