@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgOptimizedImage, provideImageKitLoader } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { TechnologySelectorComponent } from './technology/technology-selector/technology-selector.component';
 import { TerminologyComponent } from './technology/terminology/terminology.component';
+import { TechnologyImageComponent } from './technology/technology-image/technology-image.component';
+import { SrcsetDirective } from './srcset.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TechnologySelectorComponent,
-    TerminologyComponent
+    TerminologyComponent,
+    TechnologyImageComponent,
+    SrcsetDirective
   ],
   imports: [
-    BrowserModule,
-    NgOptimizedImage
+    BrowserModule
   ],
-  providers: [
-    provideImageKitLoader('https://ik.imagekit.io/jgerard/fem-space-tourism-multi-page-website')
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
