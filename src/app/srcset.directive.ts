@@ -3,6 +3,9 @@ import {
   Renderer2, SimpleChanges
 } from '@angular/core';
 
+export const IK_BASE_URL = 'https://ik.imagekit.io/jgerard'
+  + '/fem-space-tourism-multi-page-website';
+
 /*
 The primary goal of this directive is to reduce repetitive markup which is
 mostly concentrated in the srcset attribute.
@@ -24,19 +27,13 @@ as the img src attribute selecting the smallest resolution as fallback.
   selector: 'img[appSrcset], source[appSrcset]'
 })
 export class SrcsetDirective implements OnChanges {
-  private readonly IK_URL_ENDPOINT = 'https://ik.imagekit.io/jgerard';
-  private readonly REPO = 'fem-space-tourism-multi-page-website';
-  private readonly IK_BASE_URL: string;
-
   constructor(
     private elementRef: ElementRef<HTMLImageElement | HTMLSourceElement>,
-    private renderer: Renderer2) {
-    this.IK_BASE_URL = this.joinPaths(this.IK_URL_ENDPOINT, this.REPO);
-  }
+    private renderer: Renderer2) { }
 
   ngOnChanges(_changes: SimpleChanges): void {
     const host = this.elementRef.nativeElement;
-    const IK_URL = this.joinPaths(this.IK_BASE_URL, this.appUrl);
+    const IK_URL = this.joinPaths(IK_BASE_URL, this.appUrl);
     const width = host.getAttribute('width');
     const height = host.getAttribute('height');
     const descriptorUnitIsW = host.getAttribute('sizes') !== null;
