@@ -1,6 +1,6 @@
 <ol role="radiogroup">
-  <li *ngFor="let n of [1,2,3]" role="radio" (click)="technology = n"
+  <li *ngFor="let n of [0,1,2]" role="radio" (click)="technology = n"
       [attr.aria-checked]="technology === n">
-    {{ n }}
+    {{ n + 1 }}
   </li>
 </ol>

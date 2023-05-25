@@ -9,7 +9,7 @@ export class TechnologyService implements OnDestroy {
   private _id = 0;
 
   constructor() {
-    this._technology = 1;
+    this._technology = Technology.LAUNCH_VEHICLE;
     this.resetTimer();
   }
 
@@ -24,11 +24,12 @@ export class TechnologyService implements OnDestroy {
 
   private resetTimer(): void {
     const handler: TimerHandler = () => {
-      this._technology = this._technology < 3 ? this._technology + 1 : 1;
+      this._technology = this._technology < Technology.SPACE_CAPSULE
+        ? this._technology + 1 : Technology.LAUNCH_VEHICLE;
     }
 
     clearInterval(this._id);
-    this._id = setInterval(handler, 12000);
+    this._id = setInterval(handler, 10000);
   }
 
   ngOnDestroy(): void {

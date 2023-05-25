@@ -27,6 +27,7 @@
   // Typography
   font-family: Bellefair;
   color: map-get($palette, 'white');
+  text-transform: uppercase;
 
   @include mobile {
     margin-top: 8rem;

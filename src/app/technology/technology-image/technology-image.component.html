@@ -1,0 +1,7 @@
+<picture>
+    <source media="(min-width: 1440px)" appSrcset
+        [appUrl]="portrait[technology]" width="515" height="527">
+    <img [appSrcset]="[375, 480, 640, 768]" sizes="100vw"
+        [appUrl]="landscape[technology]" width="768" height="310"
+        fetchpriority="high" alt>
+</picture>
