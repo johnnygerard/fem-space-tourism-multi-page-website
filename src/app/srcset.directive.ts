@@ -53,7 +53,12 @@ export class SrcsetDirective implements OnChanges {
 
     const srcset = this.appSrcset.map(descriptorUnitIsW ?
       w => `${IK_URL}?tr=${trParams}w-${w} ${w}w` :
-      x => `${IK_URL}?tr=${trParams}w-${+width * x} ${x}x`);
+      x => {
+        const targetWidth = +width * x;
+        if (!Number.isInteger(targetWidth) || targetWidth < 1)
+          throw new Error('Target width must be a strictly positive integer.');
+        return `${IK_URL}?tr=${trParams}w-${targetWidth} ${x}x`;
+      });
 
     this.renderer.setAttribute(host, 'srcset', srcset.join(', '));
 
