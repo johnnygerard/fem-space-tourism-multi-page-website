@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
+      "name": "Load Angular App in Chrome",
       "type": "chrome",
       "request": "launch",
-      "preLaunchTask": "npm: start",
+      "preLaunchTask": "serve",
       "url": "http://localhost:4200/",
       "webRoot": "${workspaceFolder}/src",
       "runtimeArgs": [
