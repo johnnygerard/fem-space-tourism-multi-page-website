@@ -1,0 +1,35 @@
+@use 'index' as *;
+
+.heading {
+  // Typography
+  font-family: Barlow Condensed;
+  font-weight: 400;
+  color: map-get($palette, 'white');
+  text-transform: uppercase;
+
+  @include mobile {
+    font-size: 16rem;
+    line-height: 19rem;
+    letter-spacing: 2.7rem;
+  }
+
+  @include tablet {
+    font-size: 20rem;
+    line-height: 24rem;
+    letter-spacing: 3.375rem;
+  }
+
+  @include desktop {
+    font-size: 28rem;
+    line-height: 34rem;
+    letter-spacing: 4.725rem;
+  }
+
+  .index {
+    margin-right: 16rem;
+
+    // Typography
+    font-weight: 700;
+    opacity: .25;
+  }
+}

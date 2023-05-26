@@ -1,7 +1,20 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+// Dummy component for testing purposes
+@Component({
+  selector: 'app-dummy',
+  template: `<p>dummy works!</p>`
+})
+export class DummyComponent { }
+
+const routes: Routes = [
+  { path: '', component: DummyComponent },
+  { path: 'destination', component: DummyComponent },
+  { path: 'crew', component: DummyComponent },
+  { path: 'technology', component: DummyComponent },
+  { path: '**', component: DummyComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
