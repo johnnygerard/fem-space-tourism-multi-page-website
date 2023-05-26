@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { TechnologySelectorComponent } from './technology/technology-selector/technology-selector.component';
@@ -16,7 +17,8 @@ import { SrcsetDirective } from './srcset.directive';
     SrcsetDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
