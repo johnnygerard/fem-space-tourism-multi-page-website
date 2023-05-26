@@ -7,6 +7,7 @@ import { TechnologySelectorComponent } from './technology/technology-selector/te
 import { TerminologyComponent } from './technology/terminology/terminology.component';
 import { TechnologyImageComponent } from './technology/technology-image/technology-image.component';
 import { SrcsetDirective } from './srcset.directive';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SrcsetDirective } from './srcset.directive';
     TechnologySelectorComponent,
     TerminologyComponent,
     TechnologyImageComponent,
-    SrcsetDirective
+    SrcsetDirective,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
