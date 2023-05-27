@@ -3,11 +3,11 @@ import { Technology } from '../technology';
 import { TechnologyService } from '../technology.service';
 
 @Component({
-  selector: 'app-technology-selector',
-  templateUrl: './technology-selector.component.html',
-  styleUrls: ['./technology-selector.component.scss']
+  selector: 'app-selector',
+  templateUrl: './selector.component.html',
+  styleUrls: ['./selector.component.scss']
 })
-export class TechnologySelectorComponent {
+export class SelectorComponent {
   constructor(private technologyService: TechnologyService) { }
 
   protected get technology(): Technology {

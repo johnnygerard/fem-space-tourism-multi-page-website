@@ -3,11 +3,11 @@ import { TechnologyService } from '../technology.service';
 import { Technology } from '../technology';
 
 @Component({
-  selector: 'app-technology-image',
-  templateUrl: './technology-image.component.html',
-  styleUrls: ['./technology-image.component.scss']
+  selector: 'app-hero',
+  templateUrl: './hero.component.html',
+  styleUrls: ['./hero.component.scss']
 })
-export class TechnologyImageComponent {
+export class HeroComponent {
   protected readonly landscape: readonly string[];
   protected readonly portrait: readonly string[];
 
