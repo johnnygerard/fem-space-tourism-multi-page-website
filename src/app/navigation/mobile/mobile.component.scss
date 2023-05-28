@@ -20,6 +20,8 @@
   bottom: 0;
   right: 0;
 
+  // Backdrop
+  background: color.change(map-get($palette, 'white'), $alpha: 0.04);
   backdrop-filter: blur(40px);
 }
 
