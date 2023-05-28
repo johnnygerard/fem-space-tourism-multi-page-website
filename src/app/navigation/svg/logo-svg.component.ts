@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
           fill="#0B0D17" />
     </svg>
   `,
+  styles: [`:host { display: block }`]
 })
 export class LogoSvgComponent {
 

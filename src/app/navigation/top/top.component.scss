@@ -1,0 +1,67 @@
+@use 'index' as *;
+@use 'sass:color';
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+app-logo-svg {
+  margin-right: auto;
+
+  @include tablet {
+    margin-left: 40px;
+  }
+
+  height: 40px;
+  width: 40px;
+}
+
+.links {
+  padding: 0 48rem;
+  display: flex;
+  align-items: center;
+  gap: 40rem;
+
+  // Backdrop
+  background: color.change(map-get($palette, 'white'), $alpha: 0.04);
+  backdrop-filter: blur(40px);
+
+  >li {
+    display: block;
+    height: 100%;
+  }
+
+  .link {
+    text-decoration: none;
+
+    // Expand clickable area
+    $vertical-border: 3rem solid transparent;
+    padding: 37rem 0;
+    border-top: $vertical-border;
+    border-bottom: $vertical-border;
+    display: block;
+
+    // Typography
+    font-family: Barlow Condensed;
+    font-size: 14rem;
+    letter-spacing: 2.36rem;
+    color: map-get($palette, 'white');
+    text-transform: uppercase;
+
+    &:hover {
+      border-bottom-color: color.change(map-get($palette, 'white'),
+          $alpha: 0.5);
+    }
+
+    &.active {
+      border-bottom-color: map-get($palette, 'white');
+    }
+  }
+
+  .index {
+    @include tablet {
+      display: none;
+    }
+  }
+}
