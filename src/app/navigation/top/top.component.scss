@@ -7,21 +7,46 @@
 }
 
 app-logo-svg {
-  margin-right: auto;
+  margin-right: 32px;
 
   @include tablet {
     margin-left: 40px;
+  }
+
+  @include desktop {
+    margin-left: 56px;
   }
 
   height: 40px;
   width: 40px;
 }
 
+.spacer {
+  flex: 1; // Grow factor
+
+  @include desktop {
+    height: 1px;
+    background: map-get($palette, 'white');
+    opacity: 0.25;
+
+    // Shift to the right
+    position: relative;
+    left: 32px;
+
+    z-index: 1;
+  }
+}
+
 .links {
-  padding: 0 48rem;
   display: flex;
   align-items: center;
   gap: 40rem;
+  padding: 0 48rem;
+
+  @include desktop {
+    padding-left: 124rem;
+    padding-right: 164rem;
+  }
 
   // Backdrop
   background: color.change(map-get($palette, 'white'), $alpha: 0.04);
@@ -44,10 +69,18 @@ app-logo-svg {
 
     // Typography
     font-family: Barlow Condensed;
-    font-size: 14rem;
-    letter-spacing: 2.36rem;
     color: map-get($palette, 'white');
     text-transform: uppercase;
+
+    @include tablet {
+      font-size: 14rem;
+      letter-spacing: 2.36rem;
+    }
+
+    @include desktop {
+      font-size: 16rem;
+      letter-spacing: 2.7rem;
+    }
 
     &:hover {
       border-bottom-color: color.change(map-get($palette, 'white'),
@@ -62,6 +95,12 @@ app-logo-svg {
   .index {
     @include tablet {
       display: none;
+    }
+
+    @include desktop {
+      display: inline;
+      margin-right: 12rem;
+      font-weight: 700;
     }
   }
 }
