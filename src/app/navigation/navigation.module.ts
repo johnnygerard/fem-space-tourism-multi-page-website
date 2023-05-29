@@ -7,6 +7,7 @@ import { MenuSvgComponent } from './svg/menu-svg.component';
 import { CloseSvgComponent } from './svg/close-svg.component';
 import { SideComponent } from './side/side.component';
 import { TopComponent } from './top/top.component';
+import { NavigationComponent } from './navigation.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import { TopComponent } from './top/top.component';
     CloseSvgComponent,
     SideComponent,
     TopComponent,
+    NavigationComponent,
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-    TopComponent,
+    NavigationComponent,
   ]
 })
 export class NavigationModule { }
