@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { LogoSvgComponent } from './svg/logo-svg.component';
 import { MenuSvgComponent } from './svg/menu-svg.component';
 import { CloseSvgComponent } from './svg/close-svg.component';
-import { MobileComponent } from './mobile/mobile.component';
+import { SideComponent } from './side/side.component';
 import { TopComponent } from './top/top.component';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { TopComponent } from './top/top.component';
     LogoSvgComponent,
     MenuSvgComponent,
     CloseSvgComponent,
-    MobileComponent,
+    SideComponent,
     TopComponent,
   ],
   imports: [
