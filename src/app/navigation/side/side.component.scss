@@ -1,0 +1,95 @@
+@use 'index' as *;
+@use 'sass:color';
+
+.topNav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // Keep on top
+  position: relative;
+  z-index: 1;
+}
+
+.sideNav {
+  width: 254px;
+  padding: 120px 0 0 32px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  // Backdrop
+  background: color.change(map-get($palette, 'white'), $alpha: 0.04);
+  backdrop-filter: blur(40px);
+}
+
+app-logo-svg {
+  margin-left: 24px;
+
+  @mixin size($value) {
+    height: #{$value}px;
+    width: #{$value}px;
+  }
+
+  @include size(48);
+
+  @include mobile {
+    @include size(40);
+  }
+}
+
+.menu,
+.close {
+  margin-right: 24px;
+
+  // Reset button styles
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.links {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32rem;
+
+  >li {
+    display: block;
+  }
+
+  .link {
+    text-decoration: none;
+    display: block;
+
+    // Typography
+    font-family: Barlow Condensed;
+    font-size: 16rem;
+    line-height: 2; // center vertically
+    letter-spacing: 2.7rem;
+    color: map-get($palette, 'white');
+    text-transform: uppercase;
+
+    & {
+      border-right: 4px solid transparent;
+    }
+
+    // Keep hover rule before active rule
+    &:hover {
+      border-right-color: color.change(map-get($palette, 'white'),
+          $alpha: 0.5);
+    }
+
+    &.active {
+      border-right-color: map-get($palette, 'white');
+    }
+
+    .index {
+      font-weight: 700;
+      margin-right: 12rem;
+    }
+  }
+}
