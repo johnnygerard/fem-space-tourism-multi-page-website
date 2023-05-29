@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TechnologyComponent } from './technology/technology/technology.component';
 
 // Dummy component for testing purposes
 @Component({
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: '', component: DummyComponent },
   { path: 'destination', component: DummyComponent },
   { path: 'crew', component: DummyComponent },
-  { path: 'technology', component: DummyComponent },
+  { path: 'technology', component: TechnologyComponent },
   { path: '**', component: DummyComponent },
 ];
 

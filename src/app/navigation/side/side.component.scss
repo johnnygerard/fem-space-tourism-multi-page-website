@@ -1,6 +1,8 @@
 @use 'index' as *;
 @use 'sass:color';
 
+$height-breakpoint: 380px;
+
 .topNav {
   width: 100%;
   display: flex;
@@ -9,7 +11,7 @@
 
   // Keep on top
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .sideNav {
@@ -19,10 +21,21 @@
   top: 0;
   bottom: 0;
   right: 0;
+  z-index: 1;
 
   // Backdrop
   background: color.change(map-get($palette, 'white'), $alpha: 0.04);
   backdrop-filter: blur(40px);
+
+  // Add support for small viewport sizes
+  overflow-y: auto;
+  @media (max-height: $height-breakpoint) {
+    padding-top: 80px;
+  }
+
+  @media (max-width: 240px) {
+    width: 100%;
+  }
 }
 
 app-logo-svg {
@@ -42,8 +55,6 @@ app-logo-svg {
 
 .menu,
 .close {
-  margin-right: 24px;
-
   // Reset button styles
   border: none;
   padding: 0;
@@ -51,11 +62,26 @@ app-logo-svg {
   cursor: pointer;
 }
 
+.menu {
+  margin-right: 24px;
+}
+
+.close {
+  position: absolute;
+  top: 34px;
+  right: 26px;
+}
+
 .links {
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 32rem;
+  min-width: max-content;
+
+  @media (max-height: $height-breakpoint) {
+    gap: 16rem;
+  }
 
   >li {
     display: block;
