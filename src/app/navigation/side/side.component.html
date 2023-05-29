@@ -1,12 +1,15 @@
 <div class="topNav">
   <app-logo-svg></app-logo-svg>
-  <button class="close" *ngIf="sideNavOpened; else menuButton" type="button"
+  <button *ngIf="!sideNavOpened" class="menu" type="button"
       (click)="toggleSideNav()">
-    <app-close-svg></app-close-svg>
+    <app-menu-svg></app-menu-svg>
   </button>
 </div>
 
 <nav class="sideNav" *ngIf="sideNavOpened">
+  <button class="close" type="button" (click)="toggleSideNav()">
+    <app-close-svg></app-close-svg>
+  </button>
   <ul class="links">
     <li *ngFor="let i of [0,1,2,3]">
       <a class="link" routerLink="/{{ i ? pages[i] : '' }}"
@@ -16,9 +19,3 @@
     </li>
   </ul>
 </nav>
-
-<ng-template #menuButton>
-  <button class="menu" type="button" (click)="toggleSideNav()">
-    <app-menu-svg></app-menu-svg>
-  </button>
-</ng-template>

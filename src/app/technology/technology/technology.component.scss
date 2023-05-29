@@ -1,0 +1,72 @@
+@use 'index' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  @include mobile {
+    padding: 24px 0 80px;
+  }
+
+  @include tablet {
+    padding: 40px 0 96px;
+  }
+
+  @include desktop {
+    padding: 76px 0 212px 164px;
+    display: block;
+  }
+}
+
+// Anchor title to left side of hero
+@include tablet {
+  :host {
+    max-width: 768px; // hero width
+    margin: 0 auto;
+  }
+
+  app-title {
+    align-self: flex-start;
+    margin-left: 40px;
+  }
+}
+
+app-hero {
+  @include mobile {
+    margin-top: 32px;
+    min-width: 205px;
+  }
+
+  @include tablet {
+    margin-top: 60px;
+  }
+
+  @include desktop {
+    position: absolute;
+    top: 136px;
+    left: calc(min(100%, 1680px) - 515px);
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    margin: 34px 24px 0;
+    gap: 26px;
+  }
+
+  @include tablet {
+    margin-top: 56px;
+    gap: 44px;
+  }
+
+  @include desktop {
+    margin-top: 136px;
+    gap: 80px;
+    flex-direction: row;
+  }
+}
