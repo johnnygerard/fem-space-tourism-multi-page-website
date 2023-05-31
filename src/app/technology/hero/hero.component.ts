@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TechnologyService } from '../technology.service';
 import { Technology } from '../technology';
+import { SelectionService } from 'src/app/selection.service';
 
 @Component({
   selector: 'app-hero',
@@ -11,7 +11,7 @@ export class HeroComponent {
   protected readonly landscape: readonly string[];
   protected readonly portrait: readonly string[];
 
-  constructor(private techService: TechnologyService) {
+  constructor(private selection: SelectionService) {
     const technologies = [
       'launch-vehicle',
       'spaceport',
@@ -25,6 +25,6 @@ export class HeroComponent {
   }
 
   protected get technology(): Technology {
-    return this.techService.technology;
+    return this.selection.selected;
   }
 }
