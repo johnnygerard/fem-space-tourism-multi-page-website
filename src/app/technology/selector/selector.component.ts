@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Technology } from '../technology';
-import { TechnologyService } from '../technology.service';
+import { SelectionService } from 'src/app/selection.service';
 
 @Component({
   selector: 'app-selector',
@@ -8,13 +8,13 @@ import { TechnologyService } from '../technology.service';
   styleUrls: ['./selector.component.scss']
 })
 export class SelectorComponent {
-  constructor(private technologyService: TechnologyService) { }
+  constructor(private selection: SelectionService) { }
 
   protected get technology(): Technology {
-    return this.technologyService.technology;
+    return this.selection.selected;
   }
 
   protected set technology(value: Technology) {
-    this.technologyService.technology = value;
+    this.selection.selected = value;
   }
 }

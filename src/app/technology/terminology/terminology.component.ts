@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TechnologyService } from '../technology.service';
 import { Technology } from '../technology';
+import { SelectionService } from 'src/app/selection.service';
 
 @Component({
   selector: 'app-terminology',
@@ -29,9 +29,9 @@ is where you'll spend your time during the flight. It includes a space gym,
 cinema, and plenty of other activities to keep you entertained.`
   ];
 
-  constructor(private techService: TechnologyService) { }
+  constructor(private selection: SelectionService) { }
 
   protected get technology(): Technology {
-    return this.techService.technology;
+    return this.selection.selected;
   }
 }
