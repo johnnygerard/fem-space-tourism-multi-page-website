@@ -1,0 +1,19 @@
+<img class="commander" *ngIf="crewRole === crewRoles.COMMANDER"
+    [appSrcset]="[177, 354, 456, 569]" [appUrl]="urls[crewRoles.COMMANDER]" alt
+    sizes="(min-width: 1440px) 569px, (min-width: 768px) 456px, 177px"
+    width="569" height="702">
+<img class="mission-specialist"
+    *ngIf="crewRole === crewRoles.MISSION_SPECIALIST"
+    [appSrcset]="[154, 231, 369, 454]"
+    [appUrl]="urls[crewRoles.MISSION_SPECIALIST]" alt
+    sizes="(min-width: 1440px) 454px, (min-width: 768px) 369px, 154px"
+    width="454" height="654">
+<img class="pilot" *ngIf="crewRole === crewRoles.PILOT"
+    [appSrcset]="[181, 272, 433, 555]" [appUrl]="urls[crewRoles.PILOT]" alt
+    sizes="(min-width: 1440px) 555px, (min-width: 768px) 433px, 181px"
+    width="555" height="654">
+<img class="flight-engineer" *ngIf="crewRole === crewRoles.FLIGHT_ENGINEER"
+    [appSrcset]="[226, 339, 540, 616]"
+    [appUrl]="urls[crewRoles.FLIGHT_ENGINEER]" alt
+    sizes="(min-width: 1440px) 616px, (min-width: 768px) 540px, 226px"
+    width="616" height="606">

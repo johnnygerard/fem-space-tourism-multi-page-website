@@ -1,0 +1,39 @@
+@use 'index' as *;
+
+:host {
+  display: block;
+}
+
+img {
+  width: auto;
+
+  @include mobile {
+    height: 222px;
+  }
+
+  @include tablet {
+    height: 532px;
+  }
+
+  @include desktop {
+    .commander {
+      width: 569px;
+      height: 702px;
+    }
+
+    .mission-specialist {
+      width: 454px;
+      height: 654px;
+    }
+
+    .pilot {
+      width: 555px;
+      height: 654px;
+    }
+
+    .flight-engineer {
+      width: 616px;
+      height: 606px;
+    }
+  }
+}
