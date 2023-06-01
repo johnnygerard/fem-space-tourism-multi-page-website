@@ -2,18 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectorComponent } from './selector/selector.component';
 import { SELECTION_TOKEN, SelectionService } from '../selection.service';
+import { HeroComponent } from './hero/hero.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
-    SelectorComponent
+    SelectorComponent,
+    HeroComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
-    SelectorComponent
+    HeroComponent
   ],
   providers: [
     SelectionService,
