@@ -1,0 +1,6 @@
+export enum CrewRole {
+  COMMANDER,
+  MISSION_SPECIALIST,
+  PILOT,
+  FLIGHT_ENGINEER,
+}
