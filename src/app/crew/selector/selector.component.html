@@ -1,0 +1,4 @@
+<div role="radiogroup">
+  <input type="radio" *ngFor="let index of [0,1,2,3]" name="crewRole"
+     (change)="crewRole = index" [checked]="crewRole === index" />
+</div>
