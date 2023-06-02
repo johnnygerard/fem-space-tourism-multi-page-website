@@ -1,10 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-export enum Pages {
-  DESTINATION,
-  CREW,
-  TECHNOLOGY,
-}
+import { Pages } from 'src/app/pages.enum';
 
 @Component({
   selector: 'app-title',
@@ -12,14 +7,15 @@ export enum Pages {
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent implements OnInit {
-  protected heading!: string;
-  @Input() appPage!: Pages;
+  protected heading = '';
+  @Input() appPage = Pages.HOME;
 
   ngOnInit(): void {
-    this.heading = [
-      'Pick your destination',
-      'Meet your crew',
-      'Space launch 101',
-    ][this.appPage];
+    const headings: string[] = [];
+    headings[Pages.DESTINATION] = 'Pick your destination';
+    headings[Pages.CREW] = 'Meet your crew';
+    headings[Pages.TECHNOLOGY] = 'Space launch 101';
+
+    this.heading = headings[this.appPage];
   }
 }

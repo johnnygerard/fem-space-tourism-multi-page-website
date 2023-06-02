@@ -11,10 +11,10 @@
     <app-close-svg></app-close-svg>
   </button>
   <ul class="links">
-    <li *ngFor="let i of [0,1,2,3]">
-      <a class="link" routerLink="/{{ i ? pages[i] : '' }}"
+    <li *ngFor="let i of indices">
+      <a class="link" [routerLink]="links[i]"
           routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <span class="index">{{ '0' + i }}</span>{{ pages[i] }}
+        <span class="index">{{ '0' + i }}</span>{{ linkTexts[i] }}
       </a>
     </li>
   </ul>

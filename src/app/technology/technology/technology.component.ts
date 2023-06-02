@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { Pages } from 'src/app/pages.enum';
 import { SELECTION_TOKEN, SelectionService } from 'src/app/selection.service';
-import { Pages } from 'src/app/shared/title/title.component';
 
 @Component({
   selector: 'app-technology',
