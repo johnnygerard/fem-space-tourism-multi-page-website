@@ -1,5 +1,21 @@
 @use 'index' as *;
 
+:host {
+  display: block;
+  
+  @include mobile {
+    margin-top: 24px;
+  }
+
+  @include tablet {
+    margin-top: 40px;
+  }
+
+  @include desktop {
+    margin-top: 76px;
+  }
+}
+
 .heading {
   // Typography
   font-family: Barlow Condensed;
