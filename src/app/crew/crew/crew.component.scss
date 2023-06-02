@@ -1,0 +1,85 @@
+@use 'index' as *;
+
+$gutter: 24px; // horizontal space for mobile
+
+:host {
+  display: block;
+
+  @include mobile {
+    padding-bottom: 56px;
+    min-width: 250px;
+  }
+
+  @include desktop {
+    padding: 76px 0 0 164px;
+    position: relative;
+  }
+}
+
+app-title {
+  @include mobile {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include tablet {
+    margin-left: 40px;
+  }
+
+  @include desktop {
+    margin-top: 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mobile {
+    flex-direction: column-reverse;
+    margin: 32px auto 0;
+    width: fit-content;
+  }
+
+  @include tablet {
+    margin-top: 60px;
+    gap: 40px;
+  }
+
+  @include desktop {
+    align-items: flex-start;
+  }
+}
+
+app-bio {
+  @include mobile {
+    padding: 0 $gutter;
+  }
+
+  @include desktop {
+    margin-top: 154px;
+  }
+}
+
+
+app-selector {
+  @include mobile {
+    margin: 32px 0;
+  }
+
+  @include desktop {
+    position: absolute;
+    top: 656px;
+  }
+}
+
+.separator {
+  @include mobile {
+    display: block;
+    width: calc(100% - 2 * $gutter);
+    height: 1px;
+    background: map-get($palette, 'separator');
+    margin: 0 auto;
+  }
+}

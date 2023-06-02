@@ -69,7 +69,8 @@
   @include tablet {
     font-size: 16rem;
     line-height: 28rem;
-    width: 444rem;
+
+    white-space: pre-wrap;
   }
 
   @include desktop {

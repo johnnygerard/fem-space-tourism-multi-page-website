@@ -16,24 +16,40 @@ img {
   }
 
   @include desktop {
-    .commander {
-      width: 569px;
-      height: 702px;
-    }
+    position: absolute;
+  }
+}
 
-    .mission-specialist {
-      width: 454px;
-      height: 654px;
-    }
+@include desktop {
+  .commander {
+    width: 569px;
+    height: 702px;
 
-    .pilot {
-      width: 555px;
-      height: 654px;
-    }
+    top: 62px;
+    left: 734px;
+  }
 
-    .flight-engineer {
-      width: 616px;
-      height: 606px;
-    }
+  .mission-specialist {
+    width: 454px;
+    height: 654px;
+
+    top: 110px;
+    left: 800px;
+  }
+
+  .pilot {
+    width: 555px;
+    height: 654px;
+
+    top: 110px;
+    left: 744px;
+  }
+
+  .flight-engineer {
+    width: 616px;
+    height: 606px;
+
+    top: 158px;
+    left: 736px;
   }
 }

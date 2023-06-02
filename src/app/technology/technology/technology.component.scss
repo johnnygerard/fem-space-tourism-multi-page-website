@@ -7,15 +7,15 @@
   position: relative;
 
   @include mobile {
-    padding: 24px 0 80px;
+    padding-bottom: 80px;
   }
 
   @include tablet {
-    padding: 40px 0 96px;
+    padding-bottom: 96px;
   }
 
   @include desktop {
-    padding: 76px 0 212px 164px;
+    padding: 0 0 212px 164px;
     display: block;
   }
 }
