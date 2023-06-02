@@ -6,7 +6,6 @@ import { SelectorComponent } from './selector/selector.component';
 import { TerminologyComponent } from './terminology/terminology.component';
 import { SharedModule } from '../shared/shared.module';
 import { TechnologyComponent } from './technology/technology.component';
-import { SELECTION_TOKEN, SelectionService } from '../selection.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +19,5 @@ import { SELECTION_TOKEN, SelectionService } from '../selection.service';
     SharedModule
   ],
   exports: [TechnologyComponent],
-  providers: [
-    SelectionService,
-    { provide: SELECTION_TOKEN, useValue: { length: 3, interval: 1e4 } }
-  ]
 })
 export class TechnologyModule { }
