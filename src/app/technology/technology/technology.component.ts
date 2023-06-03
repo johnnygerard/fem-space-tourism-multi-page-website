@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Pages } from 'src/app/pages.enum';
+import { Page } from 'src/app/pages.enum';
 import { SELECTION_TOKEN, SelectionService } from 'src/app/selection.service';
 
 @Component({
@@ -12,5 +12,5 @@ import { SELECTION_TOKEN, SelectionService } from 'src/app/selection.service';
   ]
 })
 export class TechnologyComponent {
-  protected readonly page = Pages.TECHNOLOGY;
+  protected readonly page = Page.TECHNOLOGY;
 }
