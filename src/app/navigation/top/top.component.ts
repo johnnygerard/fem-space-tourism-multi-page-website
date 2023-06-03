@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Pages } from 'src/app/pages.enum';
+import { Page } from 'src/app/pages.enum';
 
 @Component({
   selector: 'app-top',
@@ -12,15 +12,15 @@ export class TopComponent {
   protected readonly indices: readonly number[];
 
   constructor() {
-    const enumKeys = <string[]>Object.values(Pages)
+    const enumKeys = <string[]>Object.values(Page)
       .filter(value => typeof value === 'string');
 
     this.linkTexts = enumKeys.map(key => key.toLowerCase());
     this.links = enumKeys.map(key => {
-      const link = key === Pages[Pages.HOME] ? '' : key.toLowerCase();
+      const link = key === Page[Page.HOME] ? '' : key.toLowerCase();
       return `/${link}`;
     });
-    this.indices = <number[]>Object.values(Pages)
+    this.indices = <number[]>Object.values(Page)
       .filter(value => typeof value === 'number');
   }
 }
