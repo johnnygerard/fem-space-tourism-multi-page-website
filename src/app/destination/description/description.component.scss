@@ -1,0 +1,147 @@
+@use 'index' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-width: 160rem;
+
+  @include desktop {
+    align-items: flex-start;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  color: map-get($palette, 'white');
+  font-family: Bellefair;
+  font-weight: 400;
+  align-self: center;
+
+  @include mobile {
+    font-size: 56rem;
+    line-height: 64rem;
+  }
+
+  @include tablet {
+    font-size: 80rem;
+    line-height: 92rem;
+  }
+
+  @include desktop {
+    font-size: 100rem;
+    line-height: 115rem;
+    align-self: flex-start;
+  }
+}
+
+.body {
+  font-family: Barlow;
+  color: map-get($palette, 'accent');
+  text-align: center;
+
+  @include mobile {
+    font-size: 15rem;
+    line-height: 25rem;
+    max-width: 444px;
+  }
+
+  @include tablet {
+    font-size: 16rem;
+    line-height: 28rem;
+    width: 573px;
+    margin-top: 8rem;
+  }
+
+  @include desktop {
+    font-size: 18rem;
+    line-height: 32rem;
+    width: 444px;
+    text-align: left;
+    margin-top: 14rem;
+  }
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background: map-get($palette, 'separator');
+  border: none; // Reset
+
+  @include mobile {
+    margin: 32rem 0;
+  }
+
+  @include tablet {
+    margin: 48rem 0 28rem;
+  }
+
+  @include desktop {
+    margin: 54rem 0 28rem;
+  }
+}
+
+.stats {
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 32rem;
+  }
+
+  @include tablet {
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    position: relative;
+    align-self: stretch;
+    justify-content: space-between;
+  }
+
+  >div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12rem;
+
+    >dt {
+      font-family: Barlow Condensed;
+      font-size: 14rem;
+      line-height: 17rem;
+      letter-spacing: 2.36rem;
+      text-transform: uppercase;
+      color: map-get($palette, 'accent');
+    }
+
+    >dd {
+      font-family: Bellefair;
+      font-size: 28rem;
+      line-height: 32rem;
+      text-transform: uppercase;
+      color: map-get($palette, 'white');
+    }
+
+    @include tablet {
+      position: relative;
+
+      &:first-child {
+        left: 30%;
+        transform: translateX(-50%);
+      }
+
+      &:last-child {
+        right: 30%;
+        transform: translateX(50%);
+      }
+    }
+
+    @include desktop {
+      align-items: flex-start;
+
+      &:last-child {
+        position: absolute;
+        left: 50%;
+      }
+    }
+  }
+}
