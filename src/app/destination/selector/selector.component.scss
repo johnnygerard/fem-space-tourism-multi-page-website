@@ -1,13 +1,11 @@
 @use 'index' as *;
+@use 'sass:color';
+
+$white: map-get($palette, 'white');
 
 :host {
   display: flex;
   gap: 26rem;
-}
-
-:checked+.label {
-  border-bottom: 3px solid map-get($palette, 'white');
-  color: map-get($palette, 'white');
 }
 
 .label {
@@ -26,5 +24,14 @@
     font-size: 14rem;
     line-height: 17rem;
     letter-spacing: 2.36rem;
+  }
+
+  &:hover {
+    border-bottom: 3px solid color.change($white, $alpha: 0.5);
+  }
+
+  :checked+& {
+    border-bottom: 3px solid $white;
+    color: $white;
   }
 }
