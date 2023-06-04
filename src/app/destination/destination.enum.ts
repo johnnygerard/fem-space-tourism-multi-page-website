@@ -1,6 +1,6 @@
 export enum Destination {
-  MOON,
-  MARS,
-  EUROPA,
-  TITAN
+  Moon,
+  Mars,
+  Europa,
+  Titan
 }

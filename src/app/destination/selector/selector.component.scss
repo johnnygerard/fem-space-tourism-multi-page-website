@@ -1,0 +1,30 @@
+@use 'index' as *;
+
+:host {
+  display: flex;
+  gap: 26rem;
+}
+
+:checked+.label {
+  border-bottom: 3px solid map-get($palette, 'white');
+  color: map-get($palette, 'white');
+}
+
+.label {
+  display: block;
+  cursor: pointer;
+  font-family: Barlow Condensed;
+  text-transform: uppercase;
+  color: map-get($palette, 'accent');
+  padding-bottom: 12rem;
+  font-size: 16rem;
+  line-height: 19rem;
+  letter-spacing: 2.7rem;
+
+  @include mobile {
+    padding-bottom: 8rem;
+    font-size: 14rem;
+    line-height: 17rem;
+    letter-spacing: 2.36rem;
+  }
+}

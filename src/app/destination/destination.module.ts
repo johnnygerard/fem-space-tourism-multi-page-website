@@ -4,18 +4,20 @@ import { SharedModule } from '../shared/shared.module';
 import { HeroComponent } from './hero/hero.component';
 import { SELECTION_TOKEN, SelectionService } from '../selection.service';
 import { DescriptionComponent } from './description/description.component';
+import { SelectorComponent } from './selector/selector.component';
 
 @NgModule({
   declarations: [
     HeroComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    SelectorComponent
   ],
   imports: [
     CommonModule,
     SharedModule
   ],
   exports: [
-    DescriptionComponent
+    SelectorComponent
   ],
   providers: [
     SelectionService,
