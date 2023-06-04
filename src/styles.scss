@@ -3,6 +3,5 @@
 @use 'index' as *;
 
 body {
-  display: grid;
   background: map-get($palette, 'black');
 }

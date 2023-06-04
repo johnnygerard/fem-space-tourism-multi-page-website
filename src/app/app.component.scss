@@ -1,3 +1,13 @@
-// :host {
-//   margin: auto;
-// }
+@use 'index' as *;
+
+:host {
+  display: block;
+  
+  @include mobile {
+    padding-top: 24px;
+  }
+  
+  @include desktop {
+    padding-top: 40px;
+  }
+}
