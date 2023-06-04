@@ -3,18 +3,20 @@ import { CommonModule } from '@angular/common';
 import { IntroComponent } from './intro/intro.component';
 import { ExploreComponent } from './explore/explore.component';
 import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     IntroComponent,
-    ExploreComponent
+    ExploreComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-    ExploreComponent
+    HomeComponent
   ]
 })
 export class HomeModule { }
