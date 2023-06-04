@@ -7,6 +7,7 @@ import { TechnologyModule } from './technology/technology.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { CrewModule } from './crew/crew.module';
 import { DestinationModule } from './destination/destination.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DestinationModule } from './destination/destination.module';
     TechnologyModule,
     NavigationModule,
     CrewModule,
-    DestinationModule
+    DestinationModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

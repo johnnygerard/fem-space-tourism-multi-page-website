@@ -1,0 +1,88 @@
+@use 'index' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24rem;
+  text-align: center;
+  color: map-get($palette, 'accent');
+  width: min-content;
+
+  @include mobile {
+    gap: 16rem;
+    width: auto;
+    max-width: 444rem;
+  }
+
+  @include desktop {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.overline {
+  font-family: Barlow Condensed;
+  text-transform: uppercase;
+
+  @include mobile {
+    font-size: 16rem;
+    line-height: 19rem;
+    letter-spacing: 2.7rem;
+  }
+
+  @include tablet {
+    font-size: 20rem;
+    line-height: 24rem;
+    letter-spacing: 3.375rem;
+  }
+
+  @include desktop {
+    font-size: 28rem;
+    line-height: 34rem;
+    letter-spacing: 4.725rem;
+  }
+}
+
+.title {
+  font-family: Bellefair;
+  font-weight: 400;
+  color: map-get($palette, 'white');
+  text-transform: uppercase;
+  margin-top: 24rem;
+
+  @include mobile {
+    font-size: 80rem;
+    line-height: 100rem;
+    margin-top: 16rem;
+  }
+
+  @include tablet {
+    font-size: 150rem;
+    line-height: 150rem;
+  }
+
+  @include desktop {
+    font-size: 150rem;
+    line-height: 172rem;
+  }
+}
+
+.body {
+  font-family: Barlow;
+
+  @include mobile {
+    font-size: 15rem;
+    line-height: 25rem;
+  }
+
+  @include tablet {
+    font-size: 16rem;
+    line-height: 28rem;
+  }
+
+  @include desktop {
+    font-size: 18rem;
+    line-height: 32rem;
+  }
+}
