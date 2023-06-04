@@ -1,0 +1,60 @@
+@use 'index' as *;
+@use 'sass:color';
+
+:host {
+  display: block;
+}
+
+a {
+  display: grid;
+  background: map-get($palette, 'white');
+  border-radius: 50%;
+
+  // Typography
+  font-family: Bellefair;
+  color: map-get($palette, 'black');
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 32rem;
+  letter-spacing: 2rem;
+
+
+  &:hover {
+    outline: solid color.change(map-get($palette, 'white'), $alpha: 0.1);
+    transition: outline-width 0.2s ease-out;
+  }
+
+  @include mobile {
+    font-size: 20rem;
+    letter-spacing: 1.25rem;
+
+    width: 150px;
+    height: 150px;
+
+    &:hover {
+      outline-width: 50px;
+    }
+  }
+
+  @include tablet {
+    width: 242px;
+    height: 242px;
+
+    &:hover {
+      outline-width: 80px;
+    }
+  }
+
+  @include desktop {
+    width: 274px;
+    height: 274px;
+
+    &:hover {
+      outline-width: 88px;
+    }
+  }
+
+  >span {
+    margin: auto;
+  }
+}
