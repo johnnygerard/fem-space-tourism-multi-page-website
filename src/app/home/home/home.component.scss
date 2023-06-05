@@ -18,7 +18,7 @@
   @include desktop {
     flex-direction: row;
     align-items: flex-end;
-    gap: 386px;
-    padding: 252px 0 130px 164px;
+    gap: max(386px, 26.8vw);
+    padding: max(252px, 28vh) 0 130px max(164px, 11.4vw);
   }
 }
