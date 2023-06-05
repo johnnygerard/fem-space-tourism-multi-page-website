@@ -1,10 +1,10 @@
 <app-logo-svg />
 <div class="spacer"></div>
 <ul class="links">
-  <li *ngFor="let i of indices">
-    <a class="link" [routerLink]="links[i]" routerLinkActive="active"
+  <li *ngFor="let link of links; index as i">
+    <a class="link" [routerLink]="link.url" routerLinkActive="active"
         [routerLinkActiveOptions]="{exact: true}">
-      <span class="index">{{ '0' + i }}</span>{{ linkTexts[i] }}
+      <span class="index">{{ '0' + i }}</span>{{ link.text }}
     </a>
   </li>
 </ul>
