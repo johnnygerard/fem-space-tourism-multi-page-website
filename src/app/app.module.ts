@@ -8,10 +8,12 @@ import { NavigationModule } from './navigation/navigation.module';
 import { CrewModule } from './crew/crew.module';
 import { DestinationModule } from './destination/destination.module';
 import { HomeModule } from './home/home.module';
+import { BackgroundComponent } from './background/background.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BackgroundComponent,
   ],
   imports: [
     BrowserModule,
