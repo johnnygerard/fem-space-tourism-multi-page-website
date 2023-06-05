@@ -62,10 +62,11 @@ app-logo-svg {
 
     // Expand clickable area
     $vertical-border: 3rem solid transparent;
-    padding: 37rem 0;
+    height: 96rem;
     border-top: $vertical-border;
     border-bottom: $vertical-border;
-    display: block;
+    display: flex;
+    align-items: center;
 
     // Typography
     font-family: Barlow Condensed;
